@@ -1,60 +1,72 @@
 <template>
-	<div>
-		<div>
-			<table>
-				<tr>
-					<td>{{'姓名'}}</td>
-					<td>{{'年龄'}}</td>
-				</tr>
-				<tr v-for="item in renderData">
-					<td>{{item.name}}</td>
-					<td>{{item.age}}</td>
-				</tr>
-			</table>
-		</div>
-		<div>
-			<input v-model="name" />
-			<input v-model="age" />
-		</div>
-		<div>{{'welcome to vue node mongo db project'}}</div>
-		<div class="button" @click="send">send request</div>
-		<div class="button" @click="postsend">insert login info request</div>
-		<!--<div class="button" @click="postsend">post send request</div>-->
-	</div>
+  <div>
+    <h1>大家好 ， 我是小小吴</h1>
+    <div v-if="showSDDiv">
+      <h1>你个傻吊还真点,你西门哥在此</h1>
+    </div>
+    <div class="sd"
+         @click="showsd">点我有惊喜</div>
+
+  </div>
+
 </template>
 
 <script>
-	export default {
-		data(){
-			return {
-				renderData:[],
-				name:'',
-				password:'',
-				age:''
-			}
-		},
-		methods:{
-			send(){
-				this.axios('http://127.0.0.1:8080/api/login/getAccount').then((res)=>{
-					console.log('request success',res.data)
-					this.renderData = res.data.data
-				})
-			},
-			postsend(){
-				this.axios.post('http://127.0.0.1:8080/api/login/insertLoginInfo',{name:this.name , age:this.age}).then((res)=>{
-					console.log('request success')
-				})
-			}
-		}
-	}
+export default {
+  data () {
+    return {
+      renderData: [],
+      name: '',
+      password: '',
+      age: '',
+      isHide: false,
+      showSDDiv: false
+    }
+  },
+  methods: {
+    send () {
+      this.axios('/api/login/getAccount').then(res => {
+        console.log('request success', res.data)
+        this.renderData = res.data.data
+      })
+    },
+    postsend () {
+      this.axios
+        .post('/api/login/insertLoginInfo', {
+          name: this.name,
+          age: this.age
+        })
+        .then(res => {
+          console.log('request success')
+        })
+    },
+    update () {
+
+    },
+    showsd () {
+      this.showSDDiv = true
+    }
+  }
+}
 </script>
 
 <style>
-	.button{
-		width: 200px;
-		display: block;
-		height: 40px;
-		line-height: 40px;
-		border: 1px solid #42B983;
-	}
+.sd-xx {
+  border: 5px solid rebeccapurple;
+}
+.sd {
+  color: antiquewhite;
+  font-size: 40px;
+  letter-spacing: 3px;
+}
+.button {
+  width: 200px;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #42b983;
+}
+h1 {
+  color: red;
+}
 </style>
