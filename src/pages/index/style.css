@@ -12,7 +12,7 @@ h1, h2, span {
   display: none;
 }
 
-@media screen and (min-width: 370px) {
+@media screen and (min-width: 170px) {
   .mobile {
     display: none;
   }
@@ -33,9 +33,10 @@ h1, h2, span {
     display: none;
     position: fixed;
     text-align: center;
+    left:10px;
     width: 100%;
-    top: 620px;
-    font-size: 50px;
+    top: 550px;
+    font-size: 30px;
     background: -webkit-linear-gradient(0deg, #5712b8 0%, #c9184d 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -45,15 +46,15 @@ h1, h2, span {
     letter-spacing: 6px;
   }
 .hope{
-  display: none;
+    display: none;
     position: fixed;
-    top: 550px;
-    margin-left:100px;
-    font-size: 30px;
+    top: 480px;
+    margin-left:20px;
+    font-size: 50px;
     font-weight: bold;
     text-align: center;
 
-  color: #f35626;
+    color: #f35626;
     background-image: linear-gradient(92deg, #f35626 0%,#feab3a 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -82,13 +83,13 @@ animation-timing-function: cubic-bezier(0.84, 0.02, 1, 1);
 @keyframes mymove
 {
 from {left:500px;}
-to {left:0px;}
+to {left:-50px;}
 }
 
 @-webkit-keyframes mymove /*Safari and Chrome*/
 {
 from {left:500px;}
-to {left:0px;}
+to {left:-50px;}
 }
   
   @-webkit-keyframes rollIn {

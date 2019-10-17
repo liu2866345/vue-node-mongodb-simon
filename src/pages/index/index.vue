@@ -99,13 +99,13 @@ export default {
         candle.style.top = candleTop + 'px'
         cake.style.top = cakeTop + 'px'
         plate.style.top = plateTop + 'px'
-        plateTop--
-        cakeTop--
-        candleTop--
-        plateTop--
-        cakeTop--
-        candleTop--
-        if (i > 250) {
+        plateTop = plateTop - 6
+        cakeTop = cakeTop - 6
+        candleTop = candleTop - 6
+        // plateTop--
+        // cakeTop--
+        // candleTop--
+        if (i > 90) {
           clearInterval(interval)
           document.getElementById('simon').style.display = 'block'
           document.getElementById('hope').style.display = 'block'
